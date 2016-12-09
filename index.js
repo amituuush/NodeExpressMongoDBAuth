@@ -4,14 +4,14 @@ const http = require('http'); // native Node library, for working very low level
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express(); // creates instance of express
-
+const router = require('./router');
 
 // App Setup
 
 // express middleware. Any incoming requests will be passed into this
 app.use(morgan('combined')); // registers as middleware. Morgan is a logging framework, good for debugging
 app.use(bodyParser.json({ type: '*/*'})); // middleware used to parse incoming requests into json
-
+router(app);
 
 
 // Server Setup
