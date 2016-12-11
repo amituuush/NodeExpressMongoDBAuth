@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// schemas are used to tell mongoose about the particlar fields that are model is going to have
+// schemas are used to tell mongoose about the particlar fields that our model is going to have
 
 // define our model
 const userSchema = new Schema({
