@@ -12,7 +12,12 @@ const localOptions = { userNameField: 'email'};
 const localLogin = new Local Strategy(localOptions, function(email, password, done) {
   // verify email and password, call done() with the user if it is the correct email and password
   // otherwise, call done() with false
-  
+  User.findOne({ email: email}, function(err, user) {
+    if (err) { return done(err); }
+    if (!user) { return done(null, false);}
+
+    // compare passwords -- is password equal to user.password?
+  });
 });
 
 
